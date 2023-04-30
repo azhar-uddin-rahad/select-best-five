@@ -1,6 +1,6 @@
 let playerlist;
 let playerArray;
-
+let isArray;
 function addName(nameID,btn){
     const makeli=document.createElement('li');
     makeli.innerText= nameID.innerText;
@@ -9,6 +9,7 @@ function addName(nameID,btn){
     playerArray=Array.from(playerlist);
     if(playerArray.length <= 4){
         selectList.appendChild(makeli);
+        isArray=true;
         btn.setAttribute('disabled','');
         btn.style.backgroundColor="gray";
       }
@@ -49,4 +50,40 @@ const renatoName=document.getElementById('renatoName');
 const renato=document.getElementById('renato');
 renato.addEventListener('click',function(){
     addName(renatoName,renato)
+})
+
+
+const perPlayerField=document.querySelector('#parPlayerMoney');
+document.querySelector('#playerPriceCalculate').addEventListener("click",function(){
+    const perPlayerMoneyStr=perPlayerField.value;
+    const perPlayerMoneyNum=parseInt(perPlayerMoneyStr);
+    const playerTotal=document.querySelector('#playerTotal');
+    console.log();
+    if(isArray && isNaN(perPlayerMoneyNum) == false){
+        const perPlayerTotal=perPlayerMoneyNum * (playerArray.length + 1)
+        playerTotal.innerText= perPlayerTotal;
+    }
+    else if(isNaN(perPlayerMoneyNum)){
+        alert('input the Number');
+    }
+    else{
+        alert('select player  first ')
+    }
+})
+
+document.querySelector('#totalCalculate').addEventListener('click',function(){
+    const managerField=document.querySelector('#managerField')
+    const managerFieldStr=managerField.value;
+    const managerFieldNum=parseInt(managerFieldStr);
+    const coachField=document.querySelector('#coachField')
+    const coachFieldStr=managerField.value;
+    const coachFieldNum=parseInt(coachFieldStr);
+    const playerTotal=document.querySelector('#playerTotal');
+    const playerTotalNum=parseInt(playerTotal.innerText);
+    const total= managerFieldNum + coachFieldNum + playerTotalNum;
+    const totalCalculate=document.querySelector('#total');
+    totalCalculate.innerText=total;
+    
+
+
 })

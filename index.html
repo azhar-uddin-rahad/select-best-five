@@ -202,8 +202,61 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                       <h5 class="card-title text-center">Budget</h5>
-                    
-                      
+                      <div class="budget">
+                        <div class="row mt-3">
+                          <div class="col-6">
+                            <h5 style="font-size: 14px;">Par Player:</h5>
+                          </div>
+                          <div class="col-6">
+                            <div>
+                              <input class="w-100" type="text" id="parPlayerMoney">
+                            </div>
+                          </div>
+                        </div>
+                        <button class="w-100 selected mt-5" id="playerPriceCalculate">SELECT</button>
+  
+                        <div class="row mt-3 text-center">
+                          <div class="col-6">
+                            <h5 style="font-size: 16px;">Player Expenses</h5>
+                          </div>
+                          <div class="col-6">
+                            <p>$ <span id="playerTotal">0</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="calculateTotal">
+                        <div class="row mt-3">
+                          <div class="col-6">
+                            <h5 style="font-size: 14px;">Manager:</h5>
+                          </div>
+                          <div class="col-6">
+                            <div>
+                              <input class="w-100" type="text" id="managerField">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-3">
+                          <div class="col-6">
+                            <h5 style="font-size: 14px;">Coach:</h5>
+                          </div>
+                          <div class="col-6">
+                            <div>
+                              <input class="w-100" type="text" id="coachField">
+                            </div>
+                          </div>
+                        </div>
+                        <button class="w-100 selected mt-5" id="totalCalculate">Calculate Total</button>
+
+                        <div class="row mt-3 text-center">
+                          <div class="col-6">
+                            <h5 style="font-size: 16px;">Total</h5>
+                          </div>
+                          <div class="col-6">
+                            <p>$ <span id="total">0</span></p>
+                          </div>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
             </div>
